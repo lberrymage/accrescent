@@ -1,4 +1,4 @@
-# work_in_progress
+# work_in_progress [![Build Status](https://travis-ci.com/lberrymage/work_in_progress.svg?branch=master)](https://travis-ci.com/lberrymage/work_in_progress)
 
 ## What is this?
 

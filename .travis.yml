@@ -1,0 +1,28 @@
+language: rust
+rust:
+  - stable
+  - beta
+  - nightly
+
+jobs:
+  allow_failures:
+    - rust: nightly
+  fast_finish: true
+
+before_install:
+  - rustup component add clippy
+  - rustup component add rustfmt
+
+script:
+  - cargo fmt --verbose -- --verbose --check
+  - cargo clippy --verbose --features vulkan
+  - cargo build --verbose --features vulkan
+  - cargo test --verbose --features vulkan
+
+addons:
+  apt:
+    update: true
+    packages:
+      - libasound2-dev
+      - libxcb-shape0-dev
+      - libxcb-xfixes0-dev
