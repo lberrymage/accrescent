@@ -1,0 +1,17 @@
+[package]
+name = "work_in_progress"
+version = "0.0.0"
+authors = ["lberrymage <mageelog@gmail.com>"]
+edition = "2018"
+
+[dependencies.amethyst]
+version = "0.14.0"
+default-features = false
+
+[features]
+metal = ["amethyst/metal"]
+vulkan = ["amethyst/vulkan"]
+no-slow-safety-checks = ["amethyst/no-slow-safety-checks"]
+
+[profile.release]
+lto = true
