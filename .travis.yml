@@ -4,10 +4,26 @@ rust:
   - beta
   - nightly
 
+os:
+  - linux
+  - osx
+  - windows
+
+env:
+  - GRAPHICAL_BACKEND=metal
+  - GRAPHICAL_BACKEND=vulkan
+
 jobs:
   allow_failures:
     - rust: nightly
   fast_finish: true
+  exclude:
+    - os: linux
+      env: GRAPHICAL_BACKEND=metal
+    - os: osx
+      env: GRAPHICAL_BACKEND=vulkan
+    - os: windows
+      env: GRAPHICAL_BACKEND=metal
 
 branches:
   only:
@@ -21,9 +37,9 @@ before_install:
 
 script:
   - cargo fmt --verbose -- --verbose --check
-  - cargo clippy --verbose --features vulkan
-  - cargo build --verbose --features vulkan
-  - cargo test --verbose --features vulkan
+  - cargo clippy --verbose --features $GRAPHICAL_BACKEND
+  - cargo build --verbose --features $GRAPHICAL_BACKEND
+  - cargo test --verbose --features $GRAPHICAL_BACKEND
 
 addons:
   apt:
