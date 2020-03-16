@@ -9,6 +9,12 @@ jobs:
     - rust: nightly
   fast_finish: true
 
+branches:
+  only:
+    - staging
+    - trying
+    - master
+
 before_install:
   - rustup component add clippy
   - rustup component add rustfmt
