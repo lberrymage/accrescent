@@ -1,3 +1,5 @@
+mod states;
+
 use amethyst::{
     core::transform::TransformBundle,
     prelude::*,
@@ -8,12 +10,6 @@ use amethyst::{
     },
     utils::application_root_dir,
 };
-
-struct GameState;
-
-impl SimpleState for GameState {
-    fn on_start(&mut self, _data: StateData<'_, GameData<'_, '_>>) {}
-}
 
 fn main() -> amethyst::Result<()> {
     amethyst::start_logger(Default::default());
@@ -35,7 +31,7 @@ fn main() -> amethyst::Result<()> {
         )?
         .with_bundle(TransformBundle::new())?;
 
-    let mut game = Application::new(assets_dir, GameState, game_data)?;
+    let mut game = Application::new(assets_dir, states::Game, game_data)?;
     game.run();
 
     Ok(())
