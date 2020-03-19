@@ -32,8 +32,8 @@ branches:
     - master
 
 before_install:
-  - rustup component add clippy
-  - rustup component add rustfmt
+  - rustup component add clippy || rustup +stable component add clippy
+  - rustup component add rustfmt || rustup +stable component add rustfmt
 
 script:
   - cargo fmt --verbose -- --verbose --check
