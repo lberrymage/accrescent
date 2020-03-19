@@ -10,8 +10,11 @@ os:
   - windows
 
 env:
-  - GRAPHICAL_BACKEND=metal
-  - GRAPHICAL_BACKEND=vulkan
+  global:
+    - RUSTFLAGS="-D warnings"
+  jobs:
+    - GRAPHICAL_BACKEND=metal
+    - GRAPHICAL_BACKEND=vulkan
 
 jobs:
   allow_failures:
