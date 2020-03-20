@@ -32,7 +32,6 @@ branches:
   only:
     - staging
     - trying
-    - master
 
 before_script:
   - rustup +stable component add clippy
