@@ -51,3 +51,6 @@ addons:
       - libasound2-dev
       - libxcb-shape0-dev
       - libxcb-xfixes0-dev
+
+git:
+  autocrlf: input
