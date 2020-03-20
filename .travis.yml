@@ -34,7 +34,7 @@ branches:
     - trying
     - master
 
-before_script:
+before_install:
   - rustup +stable component add clippy
   - rustup +stable component add rustfmt
 
