@@ -34,13 +34,13 @@ branches:
     - trying
     - master
 
-before_install:
-  - rustup component add clippy || rustup +stable component add clippy
-  - rustup component add rustfmt || rustup +stable component add rustfmt
+before_script:
+  - rustup +stable component add clippy
+  - rustup +stable component add rustfmt
 
 script:
-  - cargo fmt --verbose -- --verbose --check
-  - cargo clippy --verbose --features $GRAPHICAL_BACKEND
+  - cargo +stable fmt --verbose -- --verbose --check
+  - cargo +stable clippy --verbose --features $GRAPHICAL_BACKEND
   - cargo build --verbose --features $GRAPHICAL_BACKEND
   - cargo test --verbose --features $GRAPHICAL_BACKEND
 
