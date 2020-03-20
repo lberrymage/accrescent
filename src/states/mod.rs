@@ -2,6 +2,6 @@ pub mod state_prelude {
     pub use amethyst::{GameData, SimpleState, StateData};
 }
 
-pub use game::Game;
+pub use ingame::Ingame;
 
-mod game;
+mod ingame;
