@@ -8,13 +8,13 @@ use amethyst::{
         types::DefaultBackend,
         RenderingBundle,
     },
-    utils::application_root_dir,
+    utils,
 };
 
 fn main() -> amethyst::Result<()> {
     amethyst::start_logger(Default::default());
 
-    let app_root = application_root_dir()?;
+    let app_root = utils::application_root_dir()?;
 
     let assets_dir = app_root.join("assets");
     let config_dir = app_root.join("config");
