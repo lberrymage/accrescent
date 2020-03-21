@@ -2,7 +2,7 @@
 
 ## What is this?
 
-This repository is for my personal experimentation with the [amethyst game engine](https://amethyst.rs).
+This repository is for my personal experimentation with the [Amethyst game engine](https://amethyst.rs).
 
 Everything here is experimental and has no definite direction, and the
 repository name is very subject to change. I have made this public so that
