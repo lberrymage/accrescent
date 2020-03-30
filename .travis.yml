@@ -41,7 +41,7 @@ before_install:
 script:
   - cargo +stable fmt --verbose -- --verbose --check
   - cargo +stable clippy --verbose --features $GRAPHICAL_BACKEND
-  - cargo build --verbose --features $GRAPHICAL_BACKEND
+  - cargo build --locked --verbose --features $GRAPHICAL_BACKEND
   - cargo test --verbose --features $GRAPHICAL_BACKEND
 
 addons:
