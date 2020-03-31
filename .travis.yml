@@ -36,10 +36,10 @@ branches:
 
 before_install:
   - rustup +stable component add clippy
-  - rustup +stable component add rustfmt
+  - rustup +nightly-2020-03-22 component add rustfmt
 
 script:
-  - cargo +stable fmt --verbose -- --verbose --check
+  - cargo +nightly-2020-03-22 fmt --verbose -- --verbose --check
   - cargo +stable clippy --verbose --features $GRAPHICAL_BACKEND
   - cargo build --locked --verbose --features $GRAPHICAL_BACKEND
   - cargo test --verbose --features $GRAPHICAL_BACKEND
