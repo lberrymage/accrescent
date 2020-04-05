@@ -1,3 +1,10 @@
+//! `work_in_progress` (final name TBD) is my personal attempt at creating
+//! something using the [Amethyst game engine][ge]. It has no definite goals at
+//! the moment, but currently strives for clear, idiomatic code and a robust
+//! testing system to ensure quality for future users and contributors.
+//!
+//! [ge]: https://amethyst.rs
+
 mod states;
 
 use amethyst::{
@@ -9,10 +16,11 @@ use amethyst::{
         RenderingBundle,
     },
     utils,
+    LoggerConfig,
 };
 
 fn main() -> amethyst::Result<()> {
-    amethyst::start_logger(Default::default());
+    amethyst::start_logger(LoggerConfig::default());
 
     let app_root = utils::application_root_dir()?;
 
