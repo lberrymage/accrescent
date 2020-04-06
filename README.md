@@ -1,22 +1,9 @@
-# work_in_progress [![Build Status](https://travis-ci.com/lberrymage/work_in_progress.svg?branch=master)](https://travis-ci.com/lberrymage/work_in_progress)
+# Accrescent [![Build Status](https://travis-ci.com/lberrymage/accrescent.svg?branch=master)](https://travis-ci.com/lberrymage/accrescent)
 
-## What is this?
-
-This repository is for my personal experimentation with the [Amethyst game engine](https://amethyst.rs).
-
-Everything here is experimental and has no definite direction, and the
-repository name is very subject to change. I have made this public so that
-
-1.) I can use CIs for free
-
-2.) I can accept suggestions from others around whatever
-subject I come across, and
-
-3.) Everyone can see what I'm doing in case they have an interest in how I
-solved a common but annoying problem.
-
-Thanks for checking everything out, but know that this project isn't going
-anywhere at the moment, so hold tight.
+Accrescent is an open-world, modular sandbox game built upon the [Amethyst game
+engine]. It aims to be mod-driven through its pubilc API, allowing anyone to
+easily create and distribute personal modifications in source or binary
+form.
 
 ## How to run
 
@@ -39,3 +26,6 @@ on macOS.
 If you are running under Wayland and are getting a panic with the message "Image
 count not supported", you may need to prefix `WINIT_UNIX_BACKEND=x11` until
 [this issue](https://github.com/amethyst/amethyst/issues/1846) is completely resolved.
+
+
+[Amethyst game engine]: https://amethyst.rs
