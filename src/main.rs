@@ -1,7 +1,7 @@
-//! `work_in_progress` (final name TBD) is my personal attempt at creating
-//! something using the [Amethyst game engine][ge]. It has no definite goals at
-//! the moment, but currently strives for clear, idiomatic code and a robust
-//! testing system to ensure quality for future users and contributors.
+//! Accrescent is an open-world, modular sandbox game built upon the [Amethyst
+//! game engine][ge]. It aims to be mod-driven through its pubilc API, allowing
+//! anyone to easily create and distribute personal modifications in source or
+//! binary form.
 //!
 //! [ge]: https://amethyst.rs
 
