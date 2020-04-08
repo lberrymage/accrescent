@@ -62,9 +62,9 @@ codebase that doesn't conform to the guidelines, feel free to [submit an issue].
 ## Line wrapping
 
 Line wrapping should be done primarily by `rustfmt` (i.e. don't manually wrap
-long-ish lines). Of course, if your code is significantly harder to read with
-manual wrapping, by all means, wrap it. Just make sure it's consistent with
-the code around it.
+long-ish lines). Of course, if your code is significantly harder to read without
+manual wrapping, by all means, wrap it. Just make sure it's consistent with the
+code around it.
 
 ## Use paths
 
