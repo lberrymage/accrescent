@@ -3,6 +3,15 @@ name = "accrescent"
 version = "0.0.0"
 authors = ["lberrymage <mageelog@gmail.com>"]
 edition = "2018"
+description = "An open-world, modular sandbox game"
+readme = "README.md"
+repository = "https://github.com/lberrymage/accrescent"
+license = "MIT OR Apache-2.0"
+keywords = ["amethyst", "game", "voxel", "sandbox"]
+categories = ["games"]
+
+[badges.travis-ci]
+repository = "lberrymage/accrescent"
 
 [dependencies.amethyst]
 version = "0.15.0"

@@ -63,6 +63,7 @@ script:
   - cargo +nightly-2020-03-22 fmt --verbose -- --verbose --check
   - cargo +stable clippy --verbose --features $GRAPHICAL_BACKEND --
     -D clippy::as_conversions
+    -D clippy::cargo_common_metadata
     -D clippy::cast_lossless
     -D clippy::cast_possible_truncation
     -D clippy::cast_possible_wrap
