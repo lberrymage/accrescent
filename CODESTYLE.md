@@ -14,24 +14,24 @@ enforced by `clippy`, `rustfmt`, and `rustc`.
 The order of [`use` declarations] and `mod` imports should be the following,
 each section separated by a newline:
 
-1. `use`s of standard library items
+1. `mod` imports
 
-2. `use`s of external crate items
+2. `use`s of standard library items
 
-3. `mod` imports
+3. `use`s of external crate items
 
 4. `use`s of local crate items
 
 Example:
 
 ```rust
+mod foo;
+mod bar;
+
 use std::io;
 use std::fs::File;
 
 use proc_macro::TokenStream;
-
-mod foo;
-mod bar;
 
 use crate::bar::Baz;
 
