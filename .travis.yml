@@ -10,29 +10,6 @@ os:
   - windows
 
 env:
-  global:
-    - RUSTFLAGS="
-      -D absolute-paths-not-starting-with-crate
-      -D anonymous-parameters
-      -D deprecated-in-future
-      -D elided-lifetimes-in-paths
-      -D explicit-outlives-requirements
-      -D indirect-structural-match
-      -D keyword-idents
-      -D macro-use-extern-crate
-      -D missing-docs
-      -D missing-doc-code-examples
-      -D non-ascii-idents
-      -D private-doc-tests
-      -D trivial-casts
-      -D trivial-numeric-casts
-      -D unreachable-pub
-      -D unused-extern-crates
-      -D unused-import-braces
-      -D unused-lifetimes
-      -D unused-results
-      -D variant-size-differences
-      -D warnings"
   jobs:
     - GRAPHICAL_BACKEND=metal
     - GRAPHICAL_BACKEND=vulkan
@@ -60,68 +37,10 @@ before_install:
   - rustup +nightly-2020-03-22 component add rustfmt
 
 script:
-  - cargo +nightly-2020-03-22 fmt --verbose -- --verbose --check
-  - cargo +stable clippy --verbose --features $GRAPHICAL_BACKEND --
-    -D clippy::as_conversions
-    -D clippy::cargo_common_metadata
-    -D clippy::cast_lossless
-    -D clippy::cast_possible_truncation
-    -D clippy::cast_possible_wrap
-    -D clippy::cast_sign_loss
-    -D clippy::checked_conversions
-    -D clippy::clone_on_ref_ptr
-    -D clippy::copy_iterator
-    -D clippy::dbg_macro
-    -D clippy::decimal_literal_representation
-    -D clippy::default_trait_access
-    -D clippy::else_if_without_else
-    -D clippy::empty_enum
-    -D clippy::enum_glob_use
-    -D clippy::exit
-    -D clippy::explicit_into_iter_loop
-    -D clippy::explicit_iter_loop
-    -D clippy::filter_map_next
-    -D clippy::if_not_else
-    -D clippy::inline_always
-    -D clippy::integer_division
-    -D clippy::large_digit_groups
-    -D clippy::map_flatten
-    -D clippy::mem_forget
-    -D clippy::missing_docs_in_private_items
-    -D clippy::missing_errors_doc
-    -D clippy::multiple_inherent_impl
-    -D clippy::mut_mut
-    -D clippy::needless_continue
-    -D clippy::option_expect_used
-    -D clippy::option_map_unwrap_or
-    -D clippy::option_map_unwrap_or_else
-    -D clippy::option_unwrap_used
-    -D clippy::panic
-    -D clippy::print_stdout
-    -D clippy::pub_enum_variant_names
-    -D clippy::result_expect_used
-    -D clippy::result_map_unwrap_or_else
-    -D clippy::result_unwrap_used
-    -D clippy::same_functions_in_if_condition
-    -D clippy::shadow_reuse
-    -D clippy::shadow_same
-    -D clippy::shadow_unrelated
-    -D clippy::single_match_else
-    -D clippy::string_add
-    -D clippy::string_add_assign
-    -D clippy::todo
-    -D clippy::type_repetition_in_bounds
-    -D clippy::unicode_not_nfc
-    -D clippy::unimplemented
-    -D clippy::unneeded_field_pattern
-    -D clippy::unreachable
-    -D clippy::unseparated_literal_suffix
-    -D clippy::unused_self
-    -D clippy::used_underscore_binding
-    -D clippy::wildcard_dependencies
-    -D clippy::wrong_pub_self_convention
-  - cargo build --locked --verbose --features $GRAPHICAL_BACKEND
-  - cargo test --verbose --features $GRAPHICAL_BACKEND
+  - ./inspector fmt-check
+  - ./inspector clippy
+  - ./inspector build
+  - ./inspector test
 
 addons:
   apt:

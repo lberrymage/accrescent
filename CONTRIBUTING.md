@@ -27,6 +27,9 @@ upstream changes, please use `git rebase` to avoid merge commits.
 
 ## Submitting pull requests
 
+To run integration tests, use the `inspector` script found in the crate root. It
+is simply a `cargo` wrapper with linting preferences built-in.
+
 We use the [GitHub flow] workflow in this repository. You may already be
 familiar with it, but just in case, here's how you use it:
 
