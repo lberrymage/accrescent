@@ -89,7 +89,6 @@ script:
     -D clippy::mem_forget
     -D clippy::missing_docs_in_private_items
     -D clippy::missing_errors_doc
-    -D clippy::module_name_repetitions
     -D clippy::multiple_inherent_impl
     -D clippy::mut_mut
     -D clippy::needless_continue
