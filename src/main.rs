@@ -10,11 +10,7 @@ mod states;
 use amethyst::{
     core::transform::TransformBundle,
     prelude::*,
-    renderer::{
-        plugins::{RenderFlat2D, RenderToWindow},
-        types::DefaultBackend,
-        RenderingBundle,
-    },
+    renderer::{types::DefaultBackend, RenderFlat2D, RenderToWindow, RenderingBundle},
     utils,
     LoggerConfig,
 };
