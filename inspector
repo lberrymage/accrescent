@@ -5,7 +5,6 @@ cargo_clippy() {
 		-D clippy::as_conversions \
 		-D clippy::cargo_common_metadata \
 		-D clippy::cast_lossless \
-		-D clippy::cast_possible_truncation \
 		-D clippy::cast_possible_wrap \
 		-D clippy::cast_sign_loss \
 		-D clippy::checked_conversions \
@@ -93,7 +92,6 @@ export RUSTFLAGS="
 	-D unused-extern-crates \
 	-D unused-import-braces \
 	-D unused-lifetimes \
-	-D unused-results \
 	-D variant-size-differences \
 	-D warnings"
 
