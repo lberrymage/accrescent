@@ -17,6 +17,7 @@ cargo_clippy() {
 		-D clippy::empty_enum \
 		-D clippy::enum_glob_use \
 		-D clippy::exit \
+		-D clippy::expect_used \
 		-D clippy::explicit_into_iter_loop \
 		-D clippy::explicit_iter_loop \
 		-D clippy::filter_map_next \
@@ -25,22 +26,18 @@ cargo_clippy() {
 		-D clippy::integer_division \
 		-D clippy::large_digit_groups \
 		-D clippy::map_flatten \
+		-D clippy::map_unwrap_or \
+		-D clippy::match_on_vec_items \
+		-D clippy::match_wildcard_for_single_variants \
 		-D clippy::mem_forget \
 		-D clippy::missing_docs_in_private_items \
 		-D clippy::missing_errors_doc \
 		-D clippy::multiple_inherent_impl \
 		-D clippy::mut_mut \
 		-D clippy::needless_continue \
-		-D clippy::option_expect_used \
-		-D clippy::option_map_unwrap_or \
-		-D clippy::option_map_unwrap_or_else \
-		-D clippy::option_unwrap_used \
 		-D clippy::panic \
 		-D clippy::print_stdout \
 		-D clippy::pub_enum_variant_names \
-		-D clippy::result_expect_used \
-		-D clippy::result_map_unwrap_or_else \
-		-D clippy::result_unwrap_used \
 		-D clippy::same_functions_in_if_condition \
 		-D clippy::shadow_reuse \
 		-D clippy::shadow_same \
@@ -56,6 +53,7 @@ cargo_clippy() {
 		-D clippy::unreachable \
 		-D clippy::unseparated_literal_suffix \
 		-D clippy::unused_self \
+		-D clippy::unwrap_used \
 		-D clippy::used_underscore_binding \
 		-D clippy::wildcard_dependencies \
 		-D clippy::wrong_pub_self_convention
