@@ -11,7 +11,13 @@ use amethyst::{
     controls::{CursorHideSystemDesc, MouseFocusUpdateSystemDesc},
     core::transform::TransformBundle,
     prelude::*,
-    renderer::{types::DefaultBackend, RenderFlat2D, RenderToWindow, RenderingBundle},
+    renderer::{
+        types::DefaultBackend,
+        RenderShaded3D,
+        RenderSkybox,
+        RenderToWindow,
+        RenderingBundle,
+    },
     utils,
     LoggerConfig,
 };
@@ -28,11 +34,9 @@ fn main() -> amethyst::Result<()> {
     let game_data = GameDataBuilder::default()
         .with_bundle(
             RenderingBundle::<DefaultBackend>::new()
-                .with_plugin(
-                    RenderToWindow::from_config_path(display_config_path)?
-                        .with_clear([0.34, 0.36, 0.52, 1.0]),
-                )
-                .with_plugin(RenderFlat2D::default()),
+                .with_plugin(RenderShaded3D::default())
+                .with_plugin(RenderSkybox::default())
+                .with_plugin(RenderToWindow::from_config_path(display_config_path)?),
         )?
         .with_bundle(TransformBundle::new())?
         .with_system_desc(MouseFocusUpdateSystemDesc::default(), "mouse_focus", &[])
