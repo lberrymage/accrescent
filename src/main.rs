@@ -8,6 +8,7 @@
 mod states;
 
 use amethyst::{
+    controls::{CursorHideSystemDesc, MouseFocusUpdateSystemDesc},
     core::transform::TransformBundle,
     prelude::*,
     renderer::{types::DefaultBackend, RenderFlat2D, RenderToWindow, RenderingBundle},
@@ -33,7 +34,13 @@ fn main() -> amethyst::Result<()> {
                 )
                 .with_plugin(RenderFlat2D::default()),
         )?
-        .with_bundle(TransformBundle::new())?;
+        .with_bundle(TransformBundle::new())?
+        .with_system_desc(MouseFocusUpdateSystemDesc::default(), "mouse_focus", &[])
+        .with_system_desc(
+            CursorHideSystemDesc::default(),
+            "cursor_hide",
+            &["mouse_focus"],
+        );
 
     let mut game = Application::new(assets_dir, states::Ingame, game_data)?;
     game.run();
