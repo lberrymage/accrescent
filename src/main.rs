@@ -14,6 +14,7 @@ use amethyst::{
     prelude::*,
     renderer::{
         types::DefaultBackend,
+        RenderDebugLines,
         RenderShaded3D,
         RenderSkybox,
         RenderToWindow,
@@ -37,6 +38,7 @@ fn main() -> amethyst::Result<()> {
     let game_data = GameDataBuilder::default()
         .with_bundle(
             RenderingBundle::<DefaultBackend>::new()
+                .with_plugin(RenderDebugLines::default())
                 .with_plugin(RenderShaded3D::default())
                 .with_plugin(RenderSkybox::default())
                 .with_plugin(RenderToWindow::from_config_path(display_config_path)?),

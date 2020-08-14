@@ -7,6 +7,7 @@ dependencies = [
  "amethyst",
  "derive-new",
  "lazy_static",
+ "static_assertions 1.1.0",
 ]
 
 [[package]]
