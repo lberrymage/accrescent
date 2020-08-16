@@ -1036,9 +1036,9 @@ dependencies = [
 
 [[package]]
 name = "euclid"
-version = "0.20.7"
+version = "0.20.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3f852d320142e1cceb15dccef32ed72a9970b83109d8a4e24b1ab04d579f485d"
+checksum = "2bb7ef65b3777a325d1eeefefab5b6d4959da54747e33bd6258e789640f307ad"
 dependencies = [
  "num-traits 0.2.11",
 ]
@@ -1544,7 +1544,7 @@ version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5cc7ad3d82c845bdb5dde34ffdcc7a5fb4d2996e1e1ee0f19c33bc80e15196b9"
 dependencies = [
- "num-traits 0.2.11",
+ "num-traits 0.1.43",
 ]
 
 [[package]]
