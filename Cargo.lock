@@ -5,6 +5,8 @@ name = "accrescent"
 version = "0.0.0"
 dependencies = [
  "amethyst",
+ "derive-new",
+ "lazy_static",
 ]
 
 [[package]]

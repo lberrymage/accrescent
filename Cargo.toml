@@ -10,6 +10,10 @@ license = "MIT OR Apache-2.0"
 keywords = ["amethyst", "game", "voxel", "sandbox"]
 categories = ["games"]
 
+[dependencies]
+derive-new = "0.5.8"
+lazy_static = "1.4.0"
+
 [dependencies.amethyst]
 version = "0.15.0"
 default-features = false

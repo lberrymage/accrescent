@@ -6,6 +6,7 @@
 //! [ge]: https://amethyst.rs
 
 mod states;
+mod systems;
 
 use amethyst::{
     controls::{CursorHideSystemDesc, MouseFocusUpdateSystemDesc},
@@ -21,6 +22,8 @@ use amethyst::{
     utils,
     LoggerConfig,
 };
+
+use crate::systems::CameraRotationSystemDesc;
 
 fn main() -> amethyst::Result<()> {
     amethyst::start_logger(LoggerConfig::default());
@@ -39,6 +42,7 @@ fn main() -> amethyst::Result<()> {
                 .with_plugin(RenderToWindow::from_config_path(display_config_path)?),
         )?
         .with_bundle(TransformBundle::new())?
+        .with_system_desc(CameraRotationSystemDesc::default(), "camera_rotation", &[])
         .with_system_desc(MouseFocusUpdateSystemDesc::default(), "mouse_focus", &[])
         .with_system_desc(
             CursorHideSystemDesc::default(),
