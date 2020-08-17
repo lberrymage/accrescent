@@ -10,9 +10,6 @@ license = "MIT OR Apache-2.0"
 keywords = ["amethyst", "game", "voxel", "sandbox"]
 categories = ["games"]
 
-[badges.travis-ci]
-repository = "lberrymage/accrescent"
-
 [dependencies.amethyst]
 version = "0.15.0"
 default-features = false

@@ -1,4 +1,4 @@
-# Accrescent [![Build Status](https://travis-ci.com/lberrymage/accrescent.svg?branch=master)](https://travis-ci.com/lberrymage/accrescent)
+# Accrescent [![Build Status](https://github.com/lberrymage/accrescent/workflows/CI/badge.svg)](https://github.com/lberrymage/accrescent/actions)
 
 Accrescent is an open-world, modular sandbox game built upon the [Amethyst game
 engine]. It aims to be mod-driven through its pubilc API, allowing anyone to

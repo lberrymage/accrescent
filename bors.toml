@@ -1,1 +1,16 @@
-status = ["continuous-integration/travis-ci/push"]
+status = [
+    "rustfmt",
+    "clippy",
+    "build (ubuntu-latest, stable, false)",
+    "build (ubuntu-latest, beta, false)",
+    "build (windows-latest, stable, false)",
+    "build (windows-latest, beta, false)",
+    "build (macos-latest, stable, false)",
+    "build (macos-latest, beta, false)",
+    "test (ubuntu-latest, stable, false)",
+    "test (ubuntu-latest, beta, false)",
+    "test (windows-latest, stable, false)",
+    "test (windows-latest, beta, false)",
+    "test (macos-latest, stable, false)",
+    "test (macos-latest, beta, false)",
+]

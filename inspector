@@ -93,7 +93,7 @@ export RUSTFLAGS="
 	-D variant-size-differences \
 	-D warnings"
 
-if [[ ! ${GRAPHICAL_BACKEND} =~ ^(metal|vulkan)$ ]]; then
+if [[ ! ${GRAPHICAL_BACKEND} =~ ^(metal|vulkan)$ ]] && [[ ! ${1} == fmt* ]]; then
 	echo 'Error: GRAPHICAL_BACKEND must be set to one of the following values:'
 	echo ''
 	echo '    metal'
