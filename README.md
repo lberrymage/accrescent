@@ -9,13 +9,13 @@ form.
 
 To run the game, use
 
-```
+```shell
 cargo run --features "vulkan"
 ```
 
 on Windows and Linux, and
 
-```
+```shell
 cargo run --features "metal"
 ```
 
@@ -34,26 +34,26 @@ If you are compiling on Linux, make sure to install the dependencies below.
 
 ### Arch Linux
 
-```
-$ pacman -Syu grep gcc pkgconf openssl alsa-lib cmake make python3 freetype2 awk libxcb
+```shell
+pacman -Syu grep gcc pkgconf openssl alsa-lib cmake make python3 freetype2 awk libxcb
 ```
 
 ### Debian/Ubuntu
 
-```
-# apt install gcc pkg-config openssl libasound2-dev cmake build-essential python3 libfreetype6-dev libexpat1-dev libxcb-composite0-dev libssl-dev libx11-dev
+```shell
+apt install gcc pkg-config openssl libasound2-dev cmake build-essential python3 libfreetype6-dev libexpat1-dev libxcb-composite0-dev libssl-dev libx11-dev
 ```
 
 ### Fedora
 
-```
-# dnf install pkgconfig gcc openssl-devel alsa-lib-devel cmake make gcc-c++ freetype-devel expat-devel libxcb-devel libX11-devel
+```shell
+dnf install pkgconfig gcc openssl-devel alsa-lib-devel cmake make gcc-c++ freetype-devel expat-devel libxcb-devel libX11-devel
 ```
 
 ### openSUSE
 
-```
-# zypper install gcc pkg-config libopenssl-devel alsa-devel cmake gcc-c++ python3 freetype2-devel libexpat-devel libxcb-devel
+```shell
+zypper install gcc pkg-config libopenssl-devel alsa-devel cmake gcc-c++ python3 freetype2-devel libexpat-devel libxcb-devel
 ```
 
 ### Other
@@ -66,10 +66,10 @@ dependencies.
 Licensed under either of
 
 - Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or
-https://www.apache.org/licenses/LICENSE-2.0)
+<https://www.apache.org/licenses/LICENSE-2.0>)
 
 - MIT license ([LICENSE-MIT](LICENSE-MIT) or
-https://opensource.org/licenses/MIT)
+<https://opensource.org/licenses/MIT>)
 
 at your option.
 
