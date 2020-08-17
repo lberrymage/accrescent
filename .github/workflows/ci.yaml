@@ -24,12 +24,14 @@ jobs:
     env:
       GRAPHICAL_BACKEND: vulkan
     steps:
+      - name: Set up Rust toolchain
+        run: |
+          rustup update ${{ matrix.toolchain }} --no-self-update
+          rustup default ${{ matrix.toolchain }}
       - name: Install clippy
         run: rustup component add clippy
       - name: Install Linux dependencies
         run: sudo apt-get update && sudo apt-get install libasound2-dev
-      - name: Set up Rust toolchain
-        run: rustup default ${{ matrix.toolchain }}
       - name: Checkout repository
         uses: actions/checkout@v2.3.2
       - name: Lint Rust code
@@ -58,7 +60,9 @@ jobs:
           sudo apt-get install libasound2-dev libxcb-composite0-dev
         if: matrix.os == 'ubuntu-latest'
       - name: Set up Rust toolchain
-        run: rustup default ${{ matrix.toolchain }}
+        run: |
+          rustup update ${{ matrix.toolchain }} --no-self-update
+          rustup default ${{ matrix.toolchain }}
       - name: Checkout repository
         uses: actions/checkout@v2.3.2
       - name: Build project
@@ -109,7 +113,9 @@ jobs:
           sudo apt-get install libasound2-dev libxcb-composite0-dev
         if: matrix.os == 'ubuntu-latest'
       - name: Set up Rust toolchain
-        run: rustup default ${{ matrix.toolchain }}
+        run: |
+          rustup update ${{ matrix.toolchain }} --no-self-update
+          rustup default ${{ matrix.toolchain }}
       - name: Checkout repository
         uses: actions/checkout@v2.3.2
       - name: Test project
