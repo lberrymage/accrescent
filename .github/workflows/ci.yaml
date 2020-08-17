@@ -19,7 +19,7 @@ jobs:
       - name: Check code formatting
         run: ./inspector fmt-check
 
-  clippy:
+  lint:
     runs-on: ubuntu-latest
     env:
       GRAPHICAL_BACKEND: vulkan
@@ -28,12 +28,23 @@ jobs:
         run: rustup component add clippy
       - name: Install Linux dependencies
         run: sudo apt-get update && sudo apt-get install libasound2-dev
-      - name: Set up toolchain
+      - name: Set up Rust toolchain
         run: rustup default ${{ matrix.toolchain }}
       - name: Checkout repository
         uses: actions/checkout@v2.3.2
-      - name: Lint code
+      - name: Lint Rust code
         run: ./inspector clippy
+      - name: Clean up clippy build artifacts
+        run: rm -r target
+      - name: Lint everything else
+        uses: docker://github/super-linter:v3.6.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_BASH: true
+          VALIDATE_EDITORCONFIG: true
+          VALIDATE_JSON: true
+          VALIDATE_MD: true
+          VALIDATE_YAML: true
 
   build:
     runs-on: ${{ matrix.os }}
@@ -46,7 +57,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install libasound2-dev libxcb-composite0-dev
         if: matrix.os == 'ubuntu-latest'
-      - name: Set up toolchain
+      - name: Set up Rust toolchain
         run: rustup default ${{ matrix.toolchain }}
       - name: Checkout repository
         uses: actions/checkout@v2.3.2
@@ -97,7 +108,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install libasound2-dev libxcb-composite0-dev
         if: matrix.os == 'ubuntu-latest'
-      - name: Set up toolchain
+      - name: Set up Rust toolchain
         run: rustup default ${{ matrix.toolchain }}
       - name: Checkout repository
         uses: actions/checkout@v2.3.2

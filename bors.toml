@@ -1,6 +1,6 @@
 status = [
     "rustfmt",
-    "clippy",
+    "lint",
     "build (ubuntu-latest, stable, false)",
     "build (ubuntu-latest, beta, false)",
     "build (windows-latest, stable, false)",
