@@ -1,0 +1,18 @@
+(
+    axes: {
+        X: Emulated(
+            pos: Key(D),
+            neg: Key(A),
+        ),
+        Y: Emulated(
+            pos: Key(Space),
+            neg: Key(LShift),
+        ),
+        Z: Emulated(
+            pos: Key(W),
+            neg: Key(S),
+        ),
+    },
+    actions: {},
+)
+

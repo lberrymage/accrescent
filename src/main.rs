@@ -5,12 +5,14 @@
 //!
 //! [ge]: https://amethyst.rs
 
+mod input;
 mod states;
 mod systems;
 
 use amethyst::{
     controls::{CursorHideSystemDesc, MouseFocusUpdateSystemDesc},
     core::transform::TransformBundle,
+    input::InputBundle,
     prelude::*,
     renderer::{
         types::DefaultBackend,
@@ -24,7 +26,10 @@ use amethyst::{
     LoggerConfig,
 };
 
-use crate::systems::CameraRotationSystemDesc;
+use crate::{
+    input::IngameBindings,
+    systems::{CameraRotationSystemDesc, FlyMovementSystem},
+};
 
 fn main() -> amethyst::Result<()> {
     amethyst::start_logger(LoggerConfig::default());
@@ -34,8 +39,12 @@ fn main() -> amethyst::Result<()> {
     let assets_dir = app_root.join("assets");
     let config_dir = app_root.join("config");
     let display_config_path = config_dir.join("display.ron");
+    let input_config_path = config_dir.join("ingame_bindings.ron");
 
     let game_data = GameDataBuilder::default()
+        .with_bundle(
+            InputBundle::<IngameBindings>::new().with_bindings_from_file(input_config_path)?,
+        )?
         .with_bundle(
             RenderingBundle::<DefaultBackend>::new()
                 .with_plugin(RenderDebugLines::default())
@@ -44,6 +53,7 @@ fn main() -> amethyst::Result<()> {
                 .with_plugin(RenderToWindow::from_config_path(display_config_path)?),
         )?
         .with_bundle(TransformBundle::new())?
+        .with(FlyMovementSystem, "fly_movement", &[])
         .with_system_desc(CameraRotationSystemDesc::default(), "camera_rotation", &[])
         .with_system_desc(MouseFocusUpdateSystemDesc::default(), "mouse_focus", &[])
         .with_system_desc(

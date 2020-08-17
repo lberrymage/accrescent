@@ -19,6 +19,10 @@ static_assertions = "1.1.0"
 version = "0.15.0"
 default-features = false
 
+[dependencies.serde]
+version = "1.0.115"
+features = ["derive"]
+
 [features]
 metal = ["amethyst/metal"]
 vulkan = ["amethyst/vulkan"]

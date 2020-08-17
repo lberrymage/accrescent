@@ -1,6 +1,7 @@
 //! The main gameplay state
 
 use amethyst::{
+    controls::FlyControlTag,
     core::{
         math::{Point3, Translation3, UnitQuaternion, Vector3},
         transform::Transform,
@@ -67,6 +68,7 @@ impl SimpleState for Ingame {
         data.world
             .create_entity()
             .with(Camera::standard_3d(500.0, 500.0))
+            .with(FlyControlTag)
             .with(Transform::new(
                 Translation3::new(0.0, 1.5, 0.0),
                 UnitQuaternion::identity(),
