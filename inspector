@@ -23,7 +23,6 @@ cargo_clippy() {
 		-D clippy::filter_map_next \
 		-D clippy::if_not_else \
 		-D clippy::inline_always \
-		-D clippy::integer_division \
 		-D clippy::large_digit_groups \
 		-D clippy::map_flatten \
 		-D clippy::map_unwrap_or \
