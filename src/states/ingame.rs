@@ -6,8 +6,11 @@ use amethyst::{
         math::{Point3, Translation3, UnitQuaternion, Vector3},
         transform::Transform,
     },
-    prelude::*,
+    ecs::{Builder, WorldExt},
     renderer::{debug_drawing::DebugLinesComponent, palette::Srgba, Camera},
+    GameData,
+    SimpleState,
+    StateData,
 };
 use lazy_static::lazy_static;
 use static_assertions::const_assert_eq;
