@@ -30,3 +30,4 @@ no-slow-safety-checks = ["amethyst/no-slow-safety-checks"]
 
 [profile.release]
 lto = true
+codegen-units = 1
