@@ -24,12 +24,12 @@ jobs:
     env:
       GRAPHICAL_BACKEND: vulkan
     steps:
+      - name: Set up Rust toolchain
+        run: rustup update stable --no-self-update && rustup default stable
       - name: Install clippy
         run: rustup component add clippy
       - name: Install Linux dependencies
         run: sudo apt-get update && sudo apt-get install libasound2-dev
-      - name: Set up Rust toolchain
-        run: rustup default ${{ matrix.toolchain }}
       - name: Checkout repository
         uses: actions/checkout@v2.3.2
       - name: Lint Rust code
@@ -58,7 +58,7 @@ jobs:
           sudo apt-get install libasound2-dev libxcb-composite0-dev
         if: matrix.os == 'ubuntu-latest'
       - name: Set up Rust toolchain
-        run: rustup default ${{ matrix.toolchain }}
+        run: rustup update stable --no-self-update && rustup default stable
       - name: Checkout repository
         uses: actions/checkout@v2.3.2
       - name: Build project
@@ -71,11 +71,6 @@ jobs:
           - ubuntu-latest
           - windows-latest
           - macos-latest
-        toolchain:
-          - stable
-          - beta
-        experimental:
-          - false
         include:
           - os: ubuntu-latest
             GRAPHICAL_BACKEND: vulkan
@@ -83,19 +78,6 @@ jobs:
             GRAPHICAL_BACKEND: vulkan
           - os: macos-latest
             GRAPHICAL_BACKEND: metal
-          - os: ubuntu-latest
-            GRAPHICAL_BACKEND: vulkan
-            toolchain: nightly
-            experimental: true
-          - os: windows-latest
-            GRAPHICAL_BACKEND: vulkan
-            toolchain: nightly
-            experimental: true
-          - os: macos-latest
-            GRAPHICAL_BACKEND: metal
-            toolchain: nightly
-            experimental: true
-    continue-on-error: ${{ matrix.experimental }}
 
   test:
     runs-on: ${{ matrix.os }}
@@ -109,7 +91,7 @@ jobs:
           sudo apt-get install libasound2-dev libxcb-composite0-dev
         if: matrix.os == 'ubuntu-latest'
       - name: Set up Rust toolchain
-        run: rustup default ${{ matrix.toolchain }}
+        run: rustup update stable --no-self-update && rustup default stable
       - name: Checkout repository
         uses: actions/checkout@v2.3.2
       - name: Test project
@@ -122,11 +104,6 @@ jobs:
           - ubuntu-latest
           - windows-latest
           - macos-latest
-        toolchain:
-          - stable
-          - beta
-        experimental:
-          - false
         include:
           - os: ubuntu-latest
             GRAPHICAL_BACKEND: vulkan
@@ -134,16 +111,3 @@ jobs:
             GRAPHICAL_BACKEND: vulkan
           - os: macos-latest
             GRAPHICAL_BACKEND: metal
-          - os: ubuntu-latest
-            GRAPHICAL_BACKEND: vulkan
-            toolchain: nightly
-            experimental: true
-          - os: windows-latest
-            GRAPHICAL_BACKEND: vulkan
-            toolchain: nightly
-            experimental: true
-          - os: macos-latest
-            GRAPHICAL_BACKEND: metal
-            toolchain: nightly
-            experimental: true
-    continue-on-error: ${{ matrix.experimental }}
