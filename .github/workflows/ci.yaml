@@ -37,7 +37,7 @@ jobs:
       - name: Clean up clippy build artifacts
         run: rm -r target
       - name: Lint everything else
-        uses: docker://github/super-linter:v3.6.0
+        uses: docker://github/super-linter:V3.8.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_BASH: true
