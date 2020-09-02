@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cargo_clippy() {
-	cargo +stable clippy --features ${GRAPHICAL_BACKEND} --verbose -- \
+	cargo +stable clippy --features "${GRAPHICAL_BACKEND}" --verbose -- \
 		-D clippy::as_conversions \
 		-D clippy::cargo_common_metadata \
 		-D clippy::cast_lossless \
@@ -62,12 +62,12 @@ usage() {
 	echo "Usage: ${0} <subcommand>"
 	echo ''
 	echo 'Subcommands:'
-	echo '    build        Run `cargo build` with CI settings'
-	echo '    check        Run `cargo check` with CI settings'
-	echo '    clippy       Run `cargo clippy` with CI settings'
-	echo '    fmt          Run `cargo fmt` with CI settings'
-	echo '    fmt-check    Run `cargo fmt -- --check` with CI settings'
-	echo '    test         Run `cargo test` with CI settings'
+	echo '    build        Run "cargo build" with CI settings'
+	echo '    check        Run "cargo check" with CI settings'
+	echo '    clippy       Run "cargo clippy" with CI settings'
+	echo '    fmt          Run "cargo fmt" with CI settings'
+	echo '    fmt-check    Run "cargo fmt -- --check" with CI settings'
+	echo '    test         Run "cargo test" with CI settings'
 }
 
 export RUSTFLAGS="
@@ -92,7 +92,7 @@ export RUSTFLAGS="
 	-D variant-size-differences \
 	-D warnings"
 
-if [[ ! ${GRAPHICAL_BACKEND} =~ ^(metal|vulkan)$ ]] && [[ ! ${1} == fmt* ]]; then
+if [[ ! "${GRAPHICAL_BACKEND}" =~ ^(metal|vulkan)$ ]] && [[ ! ${1} == fmt* ]]; then
 	echo 'Error: GRAPHICAL_BACKEND must be set to one of the following values:'
 	echo ''
 	echo '    metal'
@@ -102,10 +102,10 @@ fi
 
 case ${1} in
 	build)
-		cargo build --locked --features ${GRAPHICAL_BACKEND} --verbose
+		cargo build --locked --features "${GRAPHICAL_BACKEND}" --verbose
 		;;
 	check)
-		cargo check --locked --features ${GRAPHICAL_BACKEND} --verbose
+		cargo check --locked --features "${GRAPHICAL_BACKEND}" --verbose
 		;;
 	clippy)
 		cargo_clippy
@@ -117,7 +117,7 @@ case ${1} in
 		cargo +nightly-2020-03-22 fmt --verbose -- --check --verbose
 		;;
 	test)
-		cargo test --features ${GRAPHICAL_BACKEND} --verbose
+		cargo test --features "${GRAPHICAL_BACKEND}" --verbose
 		;;
 	*)
 		usage
