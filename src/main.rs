@@ -50,7 +50,7 @@ fn main() -> amethyst::Result<()> {
                 .with_plugin(RenderShaded3D::default())
                 .with_plugin(RenderSkybox::default())
                 .with_plugin(RenderToWindow::from_config_path(
-                    config_dir.join("display_config.ron"),
+                    config_dir.join("display.ron"),
                 )?),
         )?
         .with_bundle(TransformBundle::new())?
