@@ -3435,9 +3435,9 @@ dependencies = [
 
 [[package]]
 name = "tynm"
-version = "0.1.4"
+version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "367fb781963961b4a90a3362c54b1871caaecb081f011005778242230f39d34e"
+checksum = "1531b1db2a05ad04e5b1b091def3deef68412969c2d0eced802b02d7fbe4ea0a"
 dependencies = [
  "nom",
 ]
